@@ -1,0 +1,86 @@
+<!doctype html>
+<html lang="zh-CN">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="description" content="测开转岗训练营：真实记录学习、ACM 编程、错题复习与项目进度。">
+  <meta name="theme-color" content="#13241f">
+  <title>测开转岗训练营 · TestDev Learning Lab</title>
+  <link rel="stylesheet" href="./styles.css">
+  <link rel="stylesheet" href="./pro-theme.css">
+</head>
+<body>
+  <div class="app-shell">
+    <aside class="sidebar" id="sidebar" aria-label="主导航">
+      <div class="brand">
+        <div class="brand-mark" aria-hidden="true"><span>T</span><span>D</span></div>
+        <div>
+          <strong>测开训练营</strong>
+          <small>TestDev Lab</small>
+        </div>
+      </div>
+      <nav class="main-nav">
+        <a href="#/dashboard" data-nav="dashboard"><span class="nav-index">01</span><span>学习台</span></a>
+        <a href="#/daily" data-nav="daily"><span class="nav-index">02</span><span>今日任务</span><b class="nav-count" id="nav-due" hidden></b></a>
+        <a href="#/practice" data-nav="practice"><span class="nav-index">03</span><span>专项刷题</span></a>
+        <a href="#/map" data-nav="map"><span class="nav-index">04</span><span>学习地图</span></a>
+        <a href="#/reviews" data-nav="reviews"><span class="nav-index">05</span><span>错题本</span></a>
+        <a href="#/analytics" data-nav="analytics"><span class="nav-index">06</span><span>学习统计</span></a>
+        <a href="#/interview" data-nav="interview"><span class="nav-index">07</span><span>模拟面试</span></a>
+        <a href="#/plan" data-nav="plan"><span class="nav-index">08</span><span>四个月计划</span></a>
+        <a href="#/settings" data-nav="settings"><span class="nav-index">09</span><span>设置与数据</span></a>
+      </nav>
+      <div class="sidebar-foot">
+        <div class="phase-dot"></div>
+        <div>
+          <span id="side-phase">正在读取计划</span>
+          <small id="side-target">目标 2027.03.01</small>
+        </div>
+      </div>
+    </aside>
+
+    <main class="main">
+      <div class="online-banner" id="online-mode-banner" hidden>
+        云端学习版：记录跨设备同步 · Python/C++ 在线判题已启用 · <span id="cloud-sync-status">正在连接</span>
+      </div>
+      <header class="topbar">
+        <button class="icon-button menu-toggle" id="menu-toggle" aria-label="打开导航">菜单</button>
+        <div class="crumb">
+          <span class="crumb-mark"></span>
+          <span id="page-kicker">学习控制台</span>
+        </div>
+        <div class="top-meta">
+          <span id="today-label"></span>
+          <span class="service-state" id="service-state"><i></i> 连接中</span>
+        </div>
+      </header>
+      <div id="view" class="view" aria-live="polite">
+        <div class="loading-block">
+          <span class="spinner"></span>
+          <p>正在读取本地学习记录</p>
+        </div>
+      </div>
+    </main>
+  </div>
+
+  <div class="mobile-scrim" id="mobile-scrim"></div>
+  <div id="toast-region" class="toast-region" aria-live="assertive"></div>
+  <div id="modal-root"></div>
+  <div class="cloud-gate" id="cloud-gate" hidden>
+    <form class="cloud-gate-card" id="cloud-gate-form" autocomplete="off">
+      <span class="pill orange">私人云端空间</span>
+      <h1>连接学习记录</h1>
+      <p>输入部署时设置的访问密码。密码只保存在当前浏览器会话，不会写入学习数据。</p>
+      <label class="form-field">
+        <span class="field-label">云端访问密码</span>
+        <input type="password" id="cloud-access-key" name="access_key" autocomplete="current-password" required>
+      </label>
+      <p class="cloud-gate-error" id="cloud-gate-error" role="alert"></p>
+      <button class="btn primary" type="submit">连接云端</button>
+    </form>
+  </div>
+  <script src="./offline-runtime.js" defer></script>
+  <script src="./app.js" defer></script>
+</body>
+</html>
+
